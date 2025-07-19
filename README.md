@@ -133,15 +133,6 @@ rm -rf <env_name>
 - This completely removes the virtual environment folder (named myenv here).
 - Replace <env_name> with your environment name (like .venv, myenv, etc.) if it's different.
 
-### 4.9. Project Setup on Another Machine
-To replicate the environment:
-```bash
-git clone <project-url>
-cd project-folder
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
 
 ## Troubleshooting
 
@@ -155,6 +146,16 @@ pip install -r requirements.txt
 | `bash: deactivate: command not found`         | Not inside virtual environment              | First activate the environment, then `deactivate` will work                     |
 
 ---
+## Best Practices
+
+- **Always use a virtual environment** for each project to avoid dependency conflicts.
+- **Name your virtual environments** consistently (e.g.,venv , .venv , project_env or myenv) and add them to `.gitignore` to prevent accidental commits.
+- **Regularly update your `requirements.txt`** after installing or upgrading packages.
+- **Do not install packages globally** unless absolutely necessary.
+- **Document additional environment variables** needed for your projects.
+
+---
+
 
 ## Conclusion
 
