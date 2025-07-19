@@ -1,13 +1,13 @@
 # SOP: Python Virtual Environment 
 
 ---
----
+
 
 | Authors           | Created on     | Version | Last updated by | Last edited on |
 |-------------------|---------------|---------|-----------------|---------------|
 | Kawalpreet Kour   | 16 July 2025  | v1      | -               | -             |
 
-
+---
 
 ## Table of Contents
 - [Purpose](#1-purpose)
@@ -53,9 +53,9 @@ python3
 ```
 <img width="711" height="138" alt="Screenshot from 2025-07-19 14-27-19" src="https://github.com/user-attachments/assets/093d083c-01e2-4012-920a-6623c2ef2535" />
 
-If the output shows the version, Python 3 is already installed. You can also see additional information about copyright, license, etc.
+- If the output shows the version, Python 3 is already installed. You can also see additional information about copyright, license, etc.
 
-If the command shows an error saying bash: python3: command not found, Python is not installed.
+- If the command shows an error saying bash: python3: command not found, Python is not installed.
 
 ### Install it:
 ```bash
@@ -73,7 +73,7 @@ python3 -m venv <env_name>
 ```
 <img width="742" height="140" alt="Screenshot from 2025-07-19 14-54-25" src="https://github.com/user-attachments/assets/8604d558-7b7f-4dfb-96df-3fca38505f44" />
 
-- Replace `<env_name>` with your preferred environment name (e.g., `venv` or `.venv` or `myenv` ).
+- Replace `<env_name>` with your preferred environment name (e.g., `venv` , `.venv` , `project_env` or `myenv` ).
 - This creates a directory containing a copy of the Python interpreter and a local `site-packages`.
 
 ### 4.4. Activating Virtual Environment
@@ -143,23 +143,36 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## 5. Troubleshooting
+## Troubleshooting
 
-| Issue | Possible Cause | Solution |
-|-------|----------------|----------|
-| `source venv/bin/activate`: No such file or directory | Wrong path or venv/ not created | Ensure you're in the correct directory and venv/ exists |
-| Permission denied while activating | Script not executable | Run: `chmod +x venv/bin/activate` |
-| pip install fails with permission issues | venv not activated | Make sure to activate the environment before installing |
-| python3: command not found | Python not installed | Install it: `sudo apt install python3 python3-venv` |
+| **Issue**                                  | **Possible Cause**                       | **Solution**                                                                 |
+|----------------------------------------------|---------------------------------------------|----------------------------------------------------------------------------------|
+| `source myenv/bin/activate`: No such file      | Wrong path or myenv/ not created             | Make sure you're in the correct folder where virtual environment exists. Use `ls` to confirm. |
+| Permission denied while activating            | Script not executable                       | Run: `chmod +x venv/bin/activate` to make the file executable                   |
+| `pip install` fails or shows "Permission denied" | Virtual env not activated               | Run `source myenv/bin/activate` before installing any package                     |
+| `python3: command not found`                  | Python not installed                        | Install Python: `sudo apt install python3 python3-venv`                         |
+| `pip freeze` shows empty                      | No packages installed yet                   | Install at least one package first using `pip install <package>`                |
+| `bash: deactivate: command not found`         | Not inside virtual environment              | First activate the environment, then `deactivate` will work                     |
 
-## 6. Conclusion
-Using Python virtual environments with `venv` helps in clean, isolated development, enabling reproducible builds and package management. It is essential for multi-project and team-based development workflows.
+---
 
-## 7. References
-- [Python venv Docs](https://docs.python.org/3/library/venv.html)
-- [Python Packaging Guide](https://packaging.python.org/en/latest/)
+## Conclusion
 
-## 8. Revision History
+Using `venv` helps isolate dependencies per project.  
+It keeps your global Python clean, avoids version conflicts, and makes deployment or sharing easy with `requirements.txt`.  
+Virtual environments are essential in real-world team projects, frameworks (like Flask, Django), or while managing multiple apps on same system.
+
+---
+
+## References
+
+- [Python Packaging Guide (Official)](https://packaging.python.org/en/latest/) – Install & best practices  
+- [W3Schools - Python venv](https://www.w3schools.com/python/python_virtualenv.asp) – Simple explanation  
+- [StackOverflow – How to create venv](https://stackoverflow.com/questions/43069780/how-to-create-virtual-env-with-python-3)  
+- [GeeksForGeeks – Python Packages](https://www.geeksforgeeks.org/python/python-packages/) – Learn about packages  
+
+
+## Revision History
 
 | Version | Date       | Author           | Changes         |
 |---------|------------|------------------|------------------|
