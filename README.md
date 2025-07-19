@@ -133,6 +133,7 @@ rm -rf <env_name>
 - This completely removes the virtual environment folder (named myenv here).
 - Replace <env_name> with your environment name (like .venv, myenv, etc.) if it's different.
 
+---
 
 ## Troubleshooting
 
@@ -163,6 +164,8 @@ Using `(env_name)` helps isolate dependencies per project.
 It keeps your global Python clean, avoids version conflicts, and makes deployment or sharing easy with `requirements.txt`.  
 Virtual environments are essential in real-world team projects, frameworks (like Flask, Django), or while managing multiple apps on same system.
 
+
+
 ---
 
 ## References
@@ -172,6 +175,7 @@ Virtual environments are essential in real-world team projects, frameworks (like
 - [StackOverflow – How to create venv](https://stackoverflow.com/questions/43069780/how-to-create-virtual-env-with-python-3)  
 - [GeeksForGeeks – Python Packages](https://www.geeksforgeeks.org/python/python-packages/) – Learn about packages  
 
+---
 
 ## Contact Information
 
