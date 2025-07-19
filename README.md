@@ -26,7 +26,7 @@
 - [Troubleshooting](#5-troubleshooting)
 - [Conclusion](#6-conclusion)
 - [References](#7-references)
-- [Revision History](#8-revision-history)
+- [Contact Information](#8-contact-information)
 
 ## 1. Purpose
 This SOP outlines the standard procedure for setting up, managing, and troubleshooting Python virtual environments using the built-in `venv` module on Ubuntu systems.
@@ -159,7 +159,7 @@ rm -rf <env_name>
 
 ## Conclusion
 
-Using `venv` helps isolate dependencies per project.  
+Using `(env_name)` helps isolate dependencies per project.  
 It keeps your global Python clean, avoids version conflicts, and makes deployment or sharing easy with `requirements.txt`.  
 Virtual environments are essential in real-world team projects, frameworks (like Flask, Django), or while managing multiple apps on same system.
 
@@ -173,8 +173,10 @@ Virtual environments are essential in real-world team projects, frameworks (like
 - [GeeksForGeeks – Python Packages](https://www.geeksforgeeks.org/python/python-packages/) – Learn about packages  
 
 
-## Revision History
+## Contact Information
 
-| Version | Date       | Author           | Changes         |
-|---------|------------|------------------|------------------|
-| 1.0     | 2025-07-19 | Kawalpreet Kour  | Initial Draft Created |
+| Name             | Email                                         |
+|------------------|-----------------------------------------------|
+| Kawalpreet Kour  | Kawalpreet.kour.snaatak@mygurukulam.co        |
+
+---
