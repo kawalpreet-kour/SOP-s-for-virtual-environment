@@ -1,11 +1,19 @@
 # SOP: Python Virtual Environment 
 
+
+> This SOP is a simple guide for setting up and using Python virtual environments on Ubuntu.
+
+
+
+![Python Logo](https://www.python.org/static/community_logos/python-logo.png)
+
+
 ---
+## Author Information
 
-
-| Authors           | Created on     | Version | Last updated by | Last edited on |
-|-------------------|---------------|---------|-----------------|---------------|
-| Kawalpreet Kour   | 16 July 2025  | v1      | -               | -             |
+| Created by      | Created on  | Version | Last updated ON | pre Reviewer | L0 Reviewer     | L1 Reviewer   | L2 Reviewer                 |
+|-----------------|------------|---------|-----------------|--------------|-----------------|---------------|-----------------------------|
+| Kawalpreet Kour | 17-07-2025 | V 1.0   | 18-07-2025      | Pritam       | Shreya/Sharvari | Abhishek V    | Abhishek dubey/ Rishabh sharma |
 
 ---
 
@@ -15,18 +23,19 @@
 - [Prerequisites](#3-prerequisites)
 - [Procedure](#4-procedure)
   - [4.1. Introduction](#41-introduction)
-  - [4.2. Checking Python Version](#42-checking-python-version)
+  - [4.2. Check if Python 3 is Installed](#42-check-if-python-3-is-installed)
   - [4.3. Creating Virtual Environment](#43-creating-virtual-environment)
   - [4.4. Activating Virtual Environment](#44-activating-virtual-environment)
   - [4.5. Installing Packages](#45-installing-packages)
   - [4.6. Freezing Installed Packages](#46-freezing-installed-packages)
   - [4.7. Deactivating the Virtual Environment](#47-deactivating-the-virtual-environment)
   - [4.8. Deleting Virtual Environment](#48-deleting-virtual-environment)
-  
-- [Troubleshooting](#5-troubleshooting)
-- [Conclusion](#6-conclusion)
-- [References](#7-references)
-- [Contact Information](#8-contact-information)
+- [Troubleshooting](#troubleshooting)
+- [Best Practices](#best-practices)
+- [FAQs](#faqs)
+- [Conclusion](#conclusion)
+- [References](#references)
+- [Contact Information](#contact-information)
 
 ## 1. Purpose
 This SOP outlines the standard procedure for setting up, managing, and troubleshooting Python virtual environments using the built-in `venv` module on Ubuntu systems.
@@ -57,12 +66,12 @@ python3
 
 - If the command shows an error saying bash: python3: command not found, Python is not installed.
 
-### Install it:
+#### Install it:
 ```bash
 sudo apt update
 sudo apt install python3 python3-venv python3-pip
 ```
-### Verify Installation
+#### Verify Installation
 ```bash
 python3 --version
 ```
@@ -94,7 +103,7 @@ pip install <package_name>
 - Installed Flask as a demo package, commonly used for building simple web apps.
 - You can install any other package as per your project like Django, FastAPI, pandas, etc.
 
-### Check install success:
+#### Check install success:
 ```bash
 pip list
 ```
@@ -109,7 +118,7 @@ pip freeze > requirements.txt
 
 - This command saves all installed packages + versions into a file.
 
-## To check its contents:
+#### To check its contents:
 ```bash
 cat requirements.txt
 ```
@@ -137,26 +146,38 @@ rm -rf <env_name>
 
 ## Troubleshooting
 
-| **Issue**                                  | **Possible Cause**                       | **Solution**                                                                 |
-|----------------------------------------------|---------------------------------------------|----------------------------------------------------------------------------------|
-| `source myenv/bin/activate`: No such file      | Wrong path or myenv/ not created             | Make sure you're in the correct folder where virtual environment exists. Use `ls` to confirm. |
-| Permission denied while activating            | Script not executable                       | Run: `chmod +x venv/bin/activate` to make the file executable                   |
-| `pip install` fails or shows "Permission denied" | Virtual env not activated               | Run `source myenv/bin/activate` before installing any package                     |
-| `python3: command not found`                  | Python not installed                        | Install Python: `sudo apt install python3 python3-venv`                         |
-| `pip freeze` shows empty                      | No packages installed yet                   | Install at least one package first using `pip install <package>`                |
-| `bash: deactivate: command not found`         | Not inside virtual environment              | First activate the environment, then `deactivate` will work                     |
+| **Issue**                                          | **Possible Cause**            | **Solution**                                                                 |
+|----------------------------------------------------|------------------------------|------------------------------------------------------------------------------|
+| `source myenv/bin/activate`: No such file          | Wrong path or myenv/ missing | Make sure you're in the correct folder where the virtual environment exists. Use `ls` to confirm. |
+| Permission denied while activating                 | Script not executable        | Run: `chmod +x venv/bin/activate` to make the file executable                |
+| `python3: command not found`                       | Python not installed         | Install Python: `sudo apt install python3 python3-venv`                      |
+| `pip freeze` shows empty                           | No packages installed yet    | Install at least one package first using `pip install <package>`             |
+| `bash: deactivate: command not found`              | Not inside virtual env       | First activate the environment, then `deactivate` will work                  |
 
 ---
+
 ## Best Practices
 
 - **Always use a virtual environment** for each project to avoid dependency conflicts.
-- **Name your virtual environments** consistently (e.g.,venv , .venv , project_env or myenv) and add them to `.gitignore` to prevent accidental commits.
+- **Name your virtual environments** consistently (e.g., `venv`, `.venv`, `project_env`, `myenv`) and add them to `.gitignore` to prevent accidental commits.
 - **Regularly update your `requirements.txt`** after installing or upgrading packages.
 - **Do not install packages globally** unless absolutely necessary.
 - **Document additional environment variables** needed for your projects.
 
 ---
 
+## FAQs
+
+**Q. What is a Python virtual environment and why should I use it?**  
+A virtual environment isolates project dependencies, preventing conflicts between packages required for different projects.
+
+**Q. How do I activate my virtual environment?**  
+Use `source <env_name>/bin/activate`. Your prompt will change to show it's active.
+
+**Q. How do I install packages only in my virtual environment?**  
+Activate your environment, then run `pip install <package_name>`.
+
+---
 
 ## Conclusion
 
@@ -164,16 +185,16 @@ Using `(env_name)` helps isolate dependencies per project.
 It keeps your global Python clean, avoids version conflicts, and makes deployment or sharing easy with `requirements.txt`.  
 Virtual environments are essential in real-world team projects, frameworks (like Flask, Django), or while managing multiple apps on same system.
 
-
-
 ---
 
 ## References
 
-- [Python Packaging Guide (Official)](https://packaging.python.org/en/latest/) – Install & best practices  
-- [W3Schools - Python venv](https://www.w3schools.com/python/python_virtualenv.asp) – Simple explanation  
-- [StackOverflow – How to create venv](https://stackoverflow.com/questions/43069780/how-to-create-virtual-env-with-python-3)  
-- [GeeksForGeeks – Python Packages](https://www.geeksforgeeks.org/python/python-packages/) – Learn about packages  
+| Links                                                                                     | Descriptions                           |
+|-------------------------------------------------------------------------------------------|----------------------------------------|
+| [Python Packaging Guide (Official)](https://packaging.python.org/en/latest/) | Install & best practices      |
+| [W3Schools - Python venv](https://www.w3schools.com/python/python_virtualenv.asp) | Simple explanation   |
+| [StackOverflow](https://stackoverflow.com/questions/43069780/how-to-create-virtual-env-with-python-3) |How to create venv |
+| [GeeksForGeeks – Python Packages](https://www.geeksforgeeks.org/python/python-packages/)  | Learn about packages          |
 
 ---
 
