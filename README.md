@@ -11,9 +11,9 @@
 ---
 ## Author Information
 
-| Created by      | Created on  | Version | Last updated ON | pre Reviewer | L0 Reviewer     | L1 Reviewer   | L2 Reviewer                 |
-|-----------------|------------|---------|-----------------|--------------|-----------------|---------------|-----------------------------|
-| Kawalpreet Kour | 18-07-2025 | V 1.0   | 19-07-2025      | Pritam       | Shreya/Sharvari | Abhishek V    | Abhishek dubey/ Rishabh sharma |
+| Created by      | Created on  | Version | Last updated ON | pre Reviewer | 
+|-----------------|------------|---------|-----------------|--------------| 
+| Kawalpreet Kour | 18-07-2025 | V 1.0   | 19-07-2025      | Pritam       | 
 
 ---
 
