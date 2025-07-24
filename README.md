@@ -7,56 +7,53 @@
 
 ![Python Logo](https://www.python.org/static/community_logos/python-logo.png)
 
-
 ---
 ## Author Information
 
-| Created by      | Created on  | Version | Last updated ON | pre Reviewer | 
-|-----------------|------------|---------|-----------------|--------------| 
-| Kawalpreet Kour | 18-07-2025 | V 1.0   | 19-07-2025      | Pritam       | 
+| Last updated    | Version    | Author          | Level     | pre Reviewer | 
+|-----------------|------------|-----------------|-----------|---------------| 
+| 18-07-2025      | V 1.0      | Kawalpreet Kour | Internal  | Pritam        | 
+| 24-07-2025      | V 1.0      | Kawalpreet Kour | L0  | Shreya Jaiswal/ Sharwari        |
 
 ---
+### Introduction
+Python virtual environments allow you to create isolated environments with their own site-packages, interpreter, and binaries. This ensures no conflict between dependencies of different projects on the same machine.
 
 ## Table of Contents
 - [Purpose](#1-purpose)
-- [Scope](#2-scope)
-- [Prerequisites](#3-prerequisites)
+- [Pre-requisites](#3-prerequisites)
 - [Procedure](#4-procedure)
-  - [4.1. Introduction](#41-introduction)
-  - [4.2. Check if Python 3 is Installed](#42-check-if-python-3-is-installed)
-  - [4.3. Creating Virtual Environment](#43-creating-virtual-environment)
-  - [4.4. Activating Virtual Environment](#44-activating-virtual-environment)
-  - [4.5. Installing Packages](#45-installing-packages)
-  - [4.6. Freezing Installed Packages](#46-freezing-installed-packages)
-  - [4.7. Deactivating the Virtual Environment](#47-deactivating-the-virtual-environment)
-  - [4.8. Deleting Virtual Environment](#48-deleting-virtual-environment)
+  - [Check if Python 3 is Installed](#42-check-if-python-3-is-installed)
+  - [Creating Virtual Environment](#43-creating-virtual-environment)
+  - [Activating Virtual Environment](#44-activating-virtual-environment)
+  - [Installing Packages](#45-installing-packages)
+  - [Freezing Installed Packages](#46-freezing-installed-packages)
+  - [Deactivating the Virtual Environment](#47-deactivating-the-virtual-environment)
+  - [Deleting Virtual Environment](#48-deleting-virtual-environment)
 - [Troubleshooting](#troubleshooting)
 - [Best Practices](#best-practices)
-- [FAQs](#faqs)
 - [Conclusion](#conclusion)
 - [References](#references)
 - [Contact Information](#contact-information)
 
-## 1. Purpose
+## Purpose
 This SOP outlines the standard procedure for setting up, managing, and troubleshooting Python virtual environments using the built-in `venv` module on Ubuntu systems.
 
-## 2. Scope
-This document is intended for all developers and engineers who need to:
-- Create isolated Python environments
-- Avoid dependency conflicts
-- Maintain reproducible project setups across machines
+---
+## Pre-requisites
 
-## 3. Prerequisites
-- A Linux-based system (Ubuntu recommended)
-- Python 3.3 or higher installed
-- Basic familiarity with terminal commands
+| Component             | Description                                           |
+|-----------------------|-------------------------------------------------------|
+| Linux System          | A Linux-based OS is required (Ubuntu is recommended) |
+| Python Version        | Python 3.3 or higher must be installed                |
+| Terminal Knowledge    | Basic familiarity with command-line operations        |
 
-## 4. Procedure
+---
+## Procedure
 
-### 4.1. Introduction
-Python virtual environments allow you to create isolated environments with their own site-packages, interpreter, and binaries. This ensures no conflict between dependencies of different projects on the same machine.
 
-### 4.2. Check if Python 3 is Installed 
+
+### Check if Python 3 is Installed 
 ```bash
 python3 
 ```
@@ -75,7 +72,7 @@ sudo apt install python3 python3-venv python3-pip
 ```bash
 python3 --version
 ```
-### 4.3. Creating Virtual Environment
+###  Creating Virtual Environment
 Navigate to your project folder and run:
 ```bash
 python3 -m venv <env_name>
@@ -85,7 +82,7 @@ python3 -m venv <env_name>
 - Replace `<env_name>` with your preferred environment name (e.g., `venv` , `.venv` , `project_env` or `myenv` ).
 - This creates a directory containing a copy of the Python interpreter and a local `site-packages`.
 
-### 4.4. Activating Virtual Environment
+### Activating Virtual Environment
 ```bash
 source <env_name>/bin/activate
 ```
@@ -93,7 +90,7 @@ source <env_name>/bin/activate
 
 Your prompt will change to `(env_name)` indicating activation.
 
-### 4.5. Installing Packages
+### Installing Packages
 ```bash
 pip install <package_name>
 ```
@@ -109,7 +106,7 @@ pip list
 ```
 <img width="715" height="378" alt="Screenshot from 2025-07-19 15-38-33" src="https://github.com/user-attachments/assets/02d2fdac-28b0-40a0-ac37-86bfea2488d4" />
 
-### 4.6. Freezing Installed Packages
+### Freezing Installed Packages
 Export the installed package versions to a file:
 ```bash
 pip freeze > requirements.txt
@@ -124,7 +121,7 @@ cat requirements.txt
 ```
 <img width="808" height="288" alt="Screenshot from 2025-07-19 16-17-29" src="https://github.com/user-attachments/assets/5023498a-a630-4b7f-a92b-1a6719e7e6ce" />
 
-### 4.7. Deactivating the Virtual Environment
+### Deactivating the Virtual Environment
 ```bash
 deactivate
 ```
@@ -132,7 +129,7 @@ deactivate
 
 - This exits the virtual environment and restores the global Python environment.
 
-### 4.8. Deleting Virtual Environment
+### Deleting Virtual Environment
 To completely remove the environment:
 ```bash
 rm -rf <env_name>
@@ -158,27 +155,15 @@ rm -rf <env_name>
 
 ## Best Practices
 
-- **Always use a virtual environment** for each project to avoid dependency conflicts.
-- **Name your virtual environments** consistently (e.g., `venv`, `.venv`, `project_env`, `myenv`) and add them to `.gitignore` to prevent accidental commits.
-- **Regularly update your `requirements.txt`** after installing or upgrading packages.
-- **Do not install packages globally** unless absolutely necessary.
-- **Document additional environment variables** needed for your projects.
+| Heading                        | Description                                                                                      |
+|-------------------------------|--------------------------------------------------------------------------------------------------|
+| Use Virtual Environments       | Always create a virtual environment for each project to avoid dependency conflicts.             |
+| Name and Ignore venv Folders   | Use consistent names like `venv`, `.venv`, `project_env`, and add them to `.gitignore`.         |
+| Update Requirements File       | After installing or upgrading packages, update `requirements.txt` using `pip freeze > requirements.txt`. |
+| Avoid Global Installs          | Don't install packages globally unless absolutely necessary.                                     |
+| Document Environment Variables | Clearly mention any environment variables your project needs in a README or `.env.example` file. |
 
 ---
-
-## FAQs
-
-**Q. What is a Python virtual environment and why should I use it?**  
-A virtual environment isolates project dependencies, preventing conflicts between packages required for different projects.
-
-**Q. How do I activate my virtual environment?**  
-Use `source <env_name>/bin/activate`. Your prompt will change to show it's active.
-
-**Q. How do I install packages only in my virtual environment?**  
-Activate your environment, then run `pip install <package_name>`.
-
----
-
 ## Conclusion
 
 Using `(env_name)` helps isolate dependencies per project.  
