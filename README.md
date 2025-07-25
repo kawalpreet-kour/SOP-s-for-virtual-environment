@@ -20,10 +20,11 @@
 ### Introduction
 Python virtual environments allow you to create isolated environments with their own site-packages, interpreter, and binaries. This ensures no conflict between dependencies of different projects on the same machine.
 
+---
 ## Table of Contents
-- [Purpose](#1-purpose)
-- [Pre-requisites](#3-prerequisites)
-- [Procedure](#4-procedure)
+- [Purpose](#purpose)
+- [Pre-requisites](#pre-requisites)
+- [Procedure](#procedure)
   - [Check if Python 3 is Installed](#check-if-python-3-is-installed)
   - [Creating Virtual Environment](#creating-virtual-environment)
   - [Activating Virtual Environment](#activating-virtual-environment)
@@ -37,6 +38,7 @@ Python virtual environments allow you to create isolated environments with their
 - [Contact Information](#contact-information)
 - [References](#references)
 
+---
 
 
 ## Purpose
