@@ -9,11 +9,12 @@
 
 ---
 ## Author Information
-
-| Last updated    | Version    | Author          | Level     | pre Reviewer | 
-|-----------------|------------|-----------------|-----------|---------------| 
-| 18-07-2025      | V 1.0      | Kawalpreet Kour | Internal  | Pritam        | 
-| 24-07-2025      | V 1.0      | Kawalpreet Kour | L0  | Shreya Jaiswal/ Sharwari        |
+| Last Updated On | Version | Author           | Level           | Reviewer               |
+|-----------------|---------|------------------|-----------------|------------------------|
+| 18-07-2025      | V1.0    | Kawalpreet Kour  | Internal Review | Pritam                 |
+| 25-07-2025      | V1.0    | Kawalpreet Kour  | L0              | Shreya/Sharvani        |
+|                 |         | Kawalpreet Kour  | L1              | Abhishek V             |
+|                 |         | Kawalpreet Kour  | L2              | Abhishek Dubey/Rishabh sharma |
 
 ---
 ### Introduction
@@ -23,21 +24,23 @@ Python virtual environments allow you to create isolated environments with their
 - [Purpose](#1-purpose)
 - [Pre-requisites](#3-prerequisites)
 - [Procedure](#4-procedure)
-  - [Check if Python 3 is Installed](#42-check-if-python-3-is-installed)
-  - [Creating Virtual Environment](#43-creating-virtual-environment)
-  - [Activating Virtual Environment](#44-activating-virtual-environment)
-  - [Installing Packages](#45-installing-packages)
-  - [Freezing Installed Packages](#46-freezing-installed-packages)
-  - [Deactivating the Virtual Environment](#47-deactivating-the-virtual-environment)
-  - [Deleting Virtual Environment](#48-deleting-virtual-environment)
+  - [Check if Python 3 is Installed](#check-if-python-3-is-installed)
+  - [Creating Virtual Environment](#creating-virtual-environment)
+  - [Activating Virtual Environment](#activating-virtual-environment)
+  - [Installing Packages](#installing-packages)
+  - [Freezing Installed Packages](#freezing-installed-packages)
+  - [Deactivating the Virtual Environment](#deactivating-the-virtual-environment)
+  - [Deleting Virtual Environment](#deleting-virtual-environment)
 - [Troubleshooting](#troubleshooting)
 - [Best Practices](#best-practices)
 - [Conclusion](#conclusion)
-- [References](#references)
 - [Contact Information](#contact-information)
+- [References](#references)
+
+
 
 ## Purpose
-This SOP outlines the standard procedure for setting up, managing, and troubleshooting Python virtual environments using the built-in `venv` module on Ubuntu systems.
+To give a simple guide on how to create, use, and manage Python virtual environments on Ubuntu.
 
 ---
 ## Pre-requisites
@@ -64,16 +67,23 @@ python3
 - If the command shows an error saying bash: python3: command not found, Python is not installed.
 
 #### Install it:
+_Updates the package list to get the latest versions._  
+_Installs Python 3, venv module (for virtual environments), and pip (Python package installer)._
+
 ```bash
 sudo apt update
 sudo apt install python3 python3-venv python3-pip
-```
+``` 
 #### Verify Installation
+_Checks installed Python 3 version._
+
 ```bash
 python3 --version
 ```
 ###  Creating Virtual Environment
-Navigate to your project folder and run:
+
+_Creates a new virtual environment._
+
 ```bash
 python3 -m venv <env_name>
 ```
@@ -83,6 +93,7 @@ python3 -m venv <env_name>
 - This creates a directory containing a copy of the Python interpreter and a local `site-packages`.
 
 ### Activating Virtual Environment
+_Activates the virtual environment (you’ll see (myenv) in your shell)._
 ```bash
 source <env_name>/bin/activate
 ```
@@ -91,6 +102,8 @@ source <env_name>/bin/activate
 Your prompt will change to `(env_name)` indicating activation.
 
 ### Installing Packages
+_Installs a package inside the virtual environment._
+
 ```bash
 pip install <package_name>
 ```
@@ -101,13 +114,16 @@ pip install <package_name>
 - You can install any other package as per your project like Django, FastAPI, pandas, etc.
 
 #### Check install success:
+_Shows all installed packages in the environment._
+
 ```bash
 pip list
 ```
 <img width="715" height="378" alt="Screenshot from 2025-07-19 15-38-33" src="https://github.com/user-attachments/assets/02d2fdac-28b0-40a0-ac37-86bfea2488d4" />
 
 ### Freezing Installed Packages
-Export the installed package versions to a file:
+_Exports the list of installed packages and versions to a file._
+
 ```bash
 pip freeze > requirements.txt
 ```
@@ -116,12 +132,16 @@ pip freeze > requirements.txt
 - This command saves all installed packages + versions into a file.
 
 #### To check its contents:
+_Displays contents of requirements.txt._
+
 ```bash
 cat requirements.txt
 ```
 <img width="808" height="288" alt="Screenshot from 2025-07-19 16-17-29" src="https://github.com/user-attachments/assets/5023498a-a630-4b7f-a92b-1a6719e7e6ce" />
 
 ### Deactivating the Virtual Environment
+_Deactivates the virtual environment._
+
 ```bash
 deactivate
 ```
@@ -131,6 +151,8 @@ deactivate
 
 ### Deleting Virtual Environment
 To completely remove the environment:
+
+
 ```bash
 rm -rf <env_name>
 ```
@@ -171,6 +193,13 @@ It keeps your global Python clean, avoids version conflicts, and makes deploymen
 Virtual environments are essential in real-world team projects, frameworks (like Flask, Django), or while managing multiple apps on same system.
 
 ---
+## Contact Information
+
+| Name             | Email                                         |
+|------------------|-----------------------------------------------|
+| Kawalpreet Kour  | Kawalpreet.kour.snaatak@mygurukulam.co        |
+
+---
 
 ## References
 
@@ -183,10 +212,4 @@ Virtual environments are essential in real-world team projects, frameworks (like
 
 ---
 
-## Contact Information
 
-| Name             | Email                                         |
-|------------------|-----------------------------------------------|
-| Kawalpreet Kour  | Kawalpreet.kour.snaatak@mygurukulam.co        |
-
----
